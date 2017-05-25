@@ -1,0 +1,133 @@
+package com.sersol.kbtools.bvt.tests.admin;
+
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertFalse;
+
+import com.sersol.common.bvt.utils.Utils;
+import com.sersol.kbtools.bvt.utils.TestRail;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+
+import com.sersol.common.bvt.pages.PageRegistry;
+import com.sersol.kbtools.bvt.pages.AdminForm;
+import com.sersol.kbtools.bvt.pages.DataQueryServletForm;
+import com.sersol.kbtools.bvt.pages.HomePage;
+import com.sersol.kbtools.bvt.pages.MainMenuForm;
+import com.sersol.kbtools.bvt.tests.ITestConstants;
+import com.sersol.kbtools.bvt.tests.KBToolsTest;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
+
+/**
+ * @author Santiago Gonzalez
+ *
+ */
+public class Admin extends KBToolsTest implements ITestConstants {
+    private TestRail client = new TestRail();
+    private String testCaseId;
+
+    @Rule
+    public TestWatcher watchman = new TestWatcher() {
+        @Override
+        protected void failed(Throwable e, Description description) {
+            try {
+                client.postFailingTestRailResult(testCaseId);
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        }
+
+        @Override
+        protected void succeeded(Description description) {
+            try {
+                client.postPassingTestRailResult(testCaseId);
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        }
+    };
+
+
+    @Before
+	public void goToMainMenu() {
+	     PageRegistry.get(HomePage.class).clickMainMenu();
+	}
+
+	@Test
+	public void testDataQueryServlet() {
+        testCaseId = "75304";
+
+		DataQueryServletForm dataQueryServletForm = PageRegistry.get(AdminForm.class).clickDataQueryServletLink();
+
+		assertThat(dataQueryServletForm.getDataQueryServletHeaderText(), containsString(PT_DATA_QUERY_SERVLET));
+		assertThat(dataQueryServletForm.getDataQueryServletText(), containsString("The Data Query Servlet is a way to extract various types of data from a number of different data sources. Output can either be in tab or comma delimited text formatting, in an HTML table, or XML for prc_xml type queries."));
+		assertThat(dataQueryServletForm.getFormatTitle(), containsString("Format"));
+		assertThat(dataQueryServletForm.getFormatText(), containsString("http://jtools:8080/jtools/Data/<FILE>?mime=<MIME>&pool=<BROKER>&query=<QUERY>"));
+		assertThat(dataQueryServletForm.getParametersTitle(), containsString("Parameters"));
+		assertThat(dataQueryServletForm.getMimeTypeTitle(), containsString("Mime Type (mime)"));
+		assertThat(dataQueryServletForm.getTextHtmlLi(), containsString("text/html"));
+		assertThat(dataQueryServletForm.getXmlText(), containsString("text/xml"));
+		assertThat(dataQueryServletForm.getTsvText(), containsString("text/tab-separated-values"));
+		assertThat(dataQueryServletForm.getCsvText(), containsString("text/comma-separated-values"));
+		assertThat(dataQueryServletForm.getDatabasePoolTitle(), containsString("Database Pool (pool)"));
+		assertThat(dataQueryServletForm.getHdidbText(), containsString("HDIDB"));
+		assertThat(dataQueryServletForm.getJToolsDbText(), containsString("JToolsDB"));
+		assertThat(dataQueryServletForm.getMarcRecordDbText(), containsString("MarcRecordDB"));
+		assertThat(dataQueryServletForm.getTitleDbText(), containsString("TitleDB"));
+		assertThat(dataQueryServletForm.getLibraryDbText(), containsString("LibraryDB"));
+		assertThat(dataQueryServletForm.getLibraryFileDbText(), containsString("LibraryFileDB"));
+		assertThat(dataQueryServletForm.getSearchCacheText(), containsString("SearchCache"));
+		assertThat(dataQueryServletForm.getMarcDiffDbText(), containsString("MARCDiffDB"));
+		assertThat(dataQueryServletForm.getMarcClientConfigDbText(), containsString("MARCClientConfigDB"));
+		assertThat(dataQueryServletForm.getMarcClientConfigAdminDbText(), containsString("MARCClientConfigAdminDB"));
+		assertThat(dataQueryServletForm.getSqlQueryTitle(), containsString("SQL Query (query)"));
+		assertThat(dataQueryServletForm.getSqlQueryText(), containsString("Any valid SQL query will do."));
+		assertThat(dataQueryServletForm.getHtmlTitle(), containsString("HTML Title (title)"));
+		assertThat(dataQueryServletForm.getHtmlText(), containsString("If the output is HTML and you desire a title for your table, you can specify the optional title parameter."));
+		assertThat(dataQueryServletForm.getFileNameTitle(), containsString("File Name"));
+		assertThat(dataQueryServletForm.getFileNameText(), containsString("The file name isn't a parameter, it's part of the path. Anything going to /Data will be handled by the servlet so you can pick whatever file name and extention you would like. For example, if you want to export directly to excel, choose tab delimited and post to /Data/results.xls"));
+
+		dataQueryServletForm.goToPreviousPage();
+	}
+
+	@Test
+	public void testSystemStatus() {
+        testCaseId = "75306";
+		DataQueryServletForm dataQueryServletForm = PageRegistry.get(AdminForm.class).clickLogoutLink();
+
+		dataQueryServletForm.utils.goToUrl("/admin/systemStatus");
+
+		assertThat(dataQueryServletForm.getSystemStatusText(), containsString("Everything Looks OK!"));
+
+		dataQueryServletForm.utils.login();
+	}
+
+	@Test
+	public void testPageUrlSyntax() {
+        testCaseId = "75305";
+		DataQueryServletForm dataQueryServletForm = PageRegistry.get(AdminForm.class).clickLogoutLink();
+
+		dataQueryServletForm.utils.goToUrl("/Admin");
+		assertThat(dataQueryServletForm.getErrorCodeText(), containsString(HTTP_NOT_FOUND_ERROR));
+
+		dataQueryServletForm.utils.goToUrl("/admin");
+		assertFalse(dataQueryServletForm.getBodyText().contains(HTTP_NOT_FOUND_ERROR));
+
+		dataQueryServletForm.utils.login();
+	}
+
+	@Test
+	public void testDataSources() {
+        testCaseId = "75307";
+		AdminForm adminForm = PageRegistry.get(MainMenuForm.class).clickAdminLink();
+
+		adminForm.clickDataSourceTestLink();
+
+		adminForm.assertDataSourcesTableData();
+		
+		adminForm.utils.login();
+	}
+}

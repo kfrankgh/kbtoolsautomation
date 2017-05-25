@@ -1,0 +1,2 @@
+DatabaseCode	Type	Title	ISSN	ISBN10	ISBN13	Author	Editor	Publisher	DatePublished	Edition	DateStart	DateEnd	URL
+RNI	monograph	Automated Export Data RNI			9780920474891	Darke, Eleanor		Dundurn Group	1995				http://site.ebrary.com/lib/sssssssssss/Doc?id=10221094

@@ -1,0 +1,25 @@
+package com.sersol.kbtools.bvt.dataServlet.account.account;
+
+import com.sersol.kbtools.bvt.dataServlet.commons.Databases;
+import com.sersol.kbtools.bvt.dataServlet.commons.StoredProcedure;
+
+public class Account implements StoredProcedure{
+
+    private String email;
+
+    public String getDatabase(){
+        return Databases.LibraryDB.toString();
+    }
+
+    public String getStoredProcedure(){
+        return "prcAccount_r";
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+}

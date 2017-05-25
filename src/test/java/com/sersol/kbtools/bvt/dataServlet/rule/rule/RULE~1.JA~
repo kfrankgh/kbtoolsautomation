@@ -1,0 +1,54 @@
+package com.sersol.kbtools.bvt.dataServlet.rule.rule;
+
+import com.sersol.kbtools.bvt.dataServlet.commons.Databases;
+import com.sersol.kbtools.bvt.dataServlet.commons.StoredProcedure;
+
+/**
+ * Represents the stored procedure "prcRule_cu" in LibraryDB
+ */
+public class Rule implements StoredProcedure {
+
+    private Integer ruleId;
+    private String description;
+    private Integer accountIdLastUpdate;
+    private Boolean inactive;
+
+    public String getDatabase(){
+        return Databases.LibraryDB.toString();
+    }
+    public String getStoredProcedure(){
+        return "prcRule_cu";
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getRuleId() {
+        return ruleId;
+    }
+
+    public void setRuleId(Integer ruleId) {
+        this.ruleId = ruleId;
+    }
+
+    public Integer getAccountIdLastUpdate() {
+        return accountIdLastUpdate;
+    }
+
+    public void setAccountIdLastUpdate(Integer accountIdLastUpdate) {
+        this.accountIdLastUpdate = accountIdLastUpdate;
+    }
+
+    public Boolean getInactive() {
+        return inactive;
+    }
+
+    public void setInactive(Boolean inactive) {
+        this.inactive = inactive;
+    }
+}

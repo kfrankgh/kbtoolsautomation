@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.sersol.common:common:2014-Q2.1-2.80-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sersol/common/common/2014-Q2.1-2.80-SNAPSHOT/common-2014-Q2.1-2.80-20140519.211657-4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sersol/common/common/2014-Q2.1-2.80-SNAPSHOT/common-2014-Q2.1-2.80-20140519.211657-4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sersol/common/common/2014-Q2.1-2.80-SNAPSHOT/common-2014-Q2.1-2.80-20140519.211657-4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

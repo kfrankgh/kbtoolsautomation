@@ -1,0 +1,20 @@
+package com.sersol.kbtools.bvt.utils;
+
+import com.sersol.kbtools.bvt.configuration.KBToolsEnvironment;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+/**
+ * Created by kfrankli on 3/11/2015.
+ */
+public class EnvInfo {
+    private static final KBToolsEnvironment env = new KBToolsEnvironment();
+
+    public String getBuildInfo() throws Exception {
+        String url = (env.getBaseUrl() + "/admin/systemStatus?param=version");
+        Document doc = Jsoup.connect(url).get();
+        String[] parsedText = doc.body().text().toString().split("Version: ");
+        return parsedText[1];
+
+    }
+}

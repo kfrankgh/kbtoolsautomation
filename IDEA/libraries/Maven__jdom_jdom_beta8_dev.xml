@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: jdom:jdom:beta8-dev">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/jdom/jdom/beta8-dev/jdom-beta8-dev.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/jdom/jdom/beta8-dev/jdom-beta8-dev-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/jdom/jdom/beta8-dev/jdom-beta8-dev-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

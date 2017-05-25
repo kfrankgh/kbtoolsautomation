@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.sersol:KBTools:war:ci:2014Q4.13.23">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sersol/KBTools/2014Q4.13.23/KBTools-2014Q4.13.23-ci.war!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sersol/KBTools/2014Q4.13.23/KBTools-2014Q4.13.23-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sersol/KBTools/2014Q4.13.23/KBTools-2014Q4.13.23-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

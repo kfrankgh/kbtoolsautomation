@@ -1,0 +1,38 @@
+001,001 82643544
+003,003 DLC
+005,005 \d{14}.\d
+007,
+008,008 741230c19609999iluwx p 0 a0eng
+010,010 a 82643544 zsn 78004483 
+016,016 7 a75011602DNLM
+022,022 0 a0098-7484l0098-7484y0002-995521
+030,030 aJAMAAP
+032,032 a283520bUSPS
+035,035 a\(OCoLC\)1124917
+037,037 bAmerican Medical Association, 515 N. State Street, Chicago, IL 60654
+#040,040 aDNLMbengcDNLMdNSDPdInUdMnMULSdDLCdNSTdNSDPdDLCdNSDPdOCoLCdNSTdAIPdDLCdAIPdOCoLCdAIPdNSTdMHdDNALdNSTdNSDPdNSTdMHdNSTdMHdOCoLCdDNALdInUdCU-SdOCoLCdNSDPdDNLMdMiUdCSdSdOCoLCdDNLMdOCoLCdNL-LeOCLdCaQQLdOCoLCdCU-AdDLCdOCoLCdM6UdTxCMdAU@dUKMGBdOCLCOdOCoLCdOCLCFdBEDGEdP4IdOCLCOdUkLWdOCLCOdOVYdOCLCOdOCoLC
+042,042 ansdpapcc 	
+#050,050 00aR15b.A48
+060,060 0 aW1 J221
+082,082 04a610/.5219
+210,210 0 aJAMAb\(Chic. Ill.\)
+222,222 0aJAMA \(Chicago, Ill.\)
+245,245 00aJAMA :bthe journal of the American Medical Association.
+246,246 30aJournal of the American Medical Association
+260,260 aChicago :bAmerican Medical Association,c1960-
+310,310 aFour issues per month,b
+321,321 aWeekly
+362,362 0 aVol. 173, no. 9 \(July 2, 1960\)-
+500,500 aTitle from caption.
+580,580 aVols. for 1960-1981 contain annually: Continuing education courses for physicians, also issued separately; vols. for 1982- contain semiannually: Continuing education opportunities for physicians, also issued separately as: Continuing education opportunities for physicians for the period ...
+610,610 20aAmerican Medical AssociationvPeriodicals.
+650,650 0aMedicinevPeriodicals.
+710,710 2 aAmerican Medical Association.
+730,730 02aContinuing education courses for physicians.
+775,775 1 tJAMA. Frenchefrex0221-7678w\(DLC\)sc 84008310w\(OCoLC\)6371173
+776,776 08iOnline version:tJAMA \(Online\)x1538-3598w\(DLC\) 2002213700w\(OCoLC\)36366429
+780,780 00tJournal of the American Medical Associationx0002-9955w\(DLC\) 07037314w\(OCoLC\)1480379
+#852,852 xuniversal pattern
+853,853 2085av.bno.u24vri\(year\)j\(month\)k\(day\)wwx01,07
+856,856 41uhttp://jama.ama-assn.org/
+863,863 4185.1a<289 >b<1 >i<2003 >j<01 >k<01 >
